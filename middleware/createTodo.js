@@ -10,11 +10,11 @@ module.exports = (objRep) => {
             id: uuid.v4(),
             todo: req.body.todo
         };
-        bookModel.insert(newTodo);
+        todoModel.insert(newTodo);
         return db.saveDatabase((err) => {
             //err?
+            res.locals.todo = newTodo;
             return next();
-            //return res.json(newBook);
         })
     }
 }

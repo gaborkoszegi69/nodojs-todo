@@ -7,7 +7,7 @@ module.exports = (objRep) => {
 
         // 404 if not found
         if (!oneBook) {
-            return res.status(404).json({error: `Book not found with id: ${req.params.id}`});
+            return res.status(404).json({error: `Todo not found with id: ${req.params.id}`});
         }
 
         res.locals.todo = oneTodo;

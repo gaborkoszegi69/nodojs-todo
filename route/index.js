@@ -7,13 +7,12 @@ const deleteTodoMW = require('../middleware/deleteTodo');
 const updateTodoMW = require('../middleware/updateTodo');
 const searchMW = require('../middleware/search');
 
-function addRoutes(app, db, TodoModel) {
+function addRoutes(app, db, todoModel) {
     const objRep = {
-        TodoModel,
+        todoModel,
         db,
         uuid
     };
-
     // API
     app.get('/api/todo',
         geTodosMW(objRep),
@@ -27,11 +26,11 @@ function addRoutes(app, db, TodoModel) {
     app.delete('/api/todo/:id',
         getTodoMW(objRep),
         deleteTodoMW(objRep),
-        (req, res, next) => res.json(res.locals.book));
+        (req, res, next) => res.json(res.locals.todo));
     app.put('/api/book/:id',
         getTodoMW(objRep),
         updateTodoMW(objRep),
-        (req, res, next) => res.json(res.locals.book));
+        (req, res, next) => res.json(res.locals.todo));
     app.post('/api/search',
         searchMW(objRep));
 
