@@ -7,7 +7,7 @@ module.exports = (objRep) => {
         }
 
         const s = req.body.search;
-        const allTodos = todoModel.find();
+        console.log(s);
         return res.json(allTodos.filter(e => e.todo.includes(s) ));
     }
 }

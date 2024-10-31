@@ -27,7 +27,7 @@ function addRoutes(app, db, todoModel) {
         getTodoMW(objRep),
         deleteTodoMW(objRep),
         (req, res, next) => res.json(res.locals.todo));
-    app.put('/api/book/:id',
+    app.put('/api/todo/:id',
         getTodoMW(objRep),
         updateTodoMW(objRep),
         (req, res, next) => res.json(res.locals.todo));

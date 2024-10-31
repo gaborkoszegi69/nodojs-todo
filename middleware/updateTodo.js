@@ -5,7 +5,7 @@ module.exports = (objRep) => {
             res.locals.todo.todo = req.body.todo;
         }
 
-        bookModel.update(res.locals.todo);
+        todoModel.update(res.locals.todo);
         db.saveDatabase(err => {
             //err?
             return next();
